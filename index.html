@@ -1,0 +1,870 @@
+<!doctype html><html lang="pt-BR"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#fff}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Slow Content</title>
+<meta name="description" content="Slow Content é uma agência de conteúdo, direção criativa e growth. Estratégia, filmes e fotografia com profundidade e consistência.">
+<link rel="canonical" href="https://slowcontent.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Slow Content">
+<meta property="og:description" content="Agência de conteúdo, direção criativa e growth.">
+<meta property="og:url" content="https://slowcontent.com.br/">
+<meta property="og:image" content="https://slowcontent.com.br/img/yoga-por-do-sol.jpg">
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<style>
+  /* Identidade visual: Manual de Identidade Visual Slow Content (v01, jul/2025).
+     Cores principais: preto #000000 e branco #ffffff. Auxiliares (uso moderado): laranja #f15629 e azul bebê #c0e7f1.
+     Tipografia: Neue Montreal (títulos e subtítulos) + Inter (textos). Fontes oficiais embutidas (woff2 gerado dos arquivos enviados). Logo vetorial extraído do manual, sem alterações. */
+  @font-face{font-family:"Neue Montreal";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/NeueMontreal-Regular.woff2") format("woff2")}
+  @font-face{font-family:"Neue Montreal";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/NeueMontreal-Medium.woff2") format("woff2")}
+  @font-face{font-family:"Neue Montreal";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/NeueMontreal-Bold.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/Inter-Regular.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/Inter-Medium.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/Inter-SemiBold.woff2") format("woff2")}
+
+  :root{
+    /* negativo (padrão): branco sobre fundo escuro */
+    --bg:#000000;
+    --fg:#ffffff;
+    --mute:#a6a6a6;
+    --mute-2:#7a7a7a;
+    --line:#262626;
+    --line-strong:#3d3d3d;
+    --strip:#181615;
+    --panel:#080808;
+    --logo:#ffffff;
+    --orange:#f15629;
+    --blue:#c0e7f1;
+    --on-fg:#000000;
+    color-scheme:dark;
+
+    --f-display:"Neue Montreal","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --f-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --r-pill:999px;
+  }
+  :root[data-theme="light"]{
+    /* positivo: preto (#231f20) sobre fundo claro */
+    --bg:#ffffff;
+    --fg:#000000;
+    --mute:#555555;
+    --mute-2:#8a8a8a;
+    --line:#e3e3e3;
+    --line-strong:#c9c9c9;
+    --strip:#ebebeb;
+    --panel:#f6f6f6;
+    --logo:#231f20;
+    --on-fg:#ffffff;
+    color-scheme:light;
+  }
+
+  *{box-sizing:border-box}
+  html,body{background:var(--bg);color:var(--fg)}
+  body{
+    margin:0;
+    font-family:var(--f-body);
+    font-weight:400;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    padding-left:max(24px, env(safe-area-inset-left, 0px));
+    padding-right:max(24px, env(safe-area-inset-right, 0px));
+  }
+  body::before{
+    content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px);
+    z-index:10; background:var(--bg);
+  }
+  .wrap{max-width:1280px;margin:0 auto;position:relative}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+  .lbl{font-family:var(--f-body);font-weight:400;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+
+  /* ---- Logo (vetor oficial, sem alterações; cor via --logo) ---- */
+  .logo{display:block;color:var(--logo);fill:currentColor;flex-shrink:0}
+  .logo.full{width:250px;height:auto;aspect-ratio:614.07/93.61} /* redução máxima web: 250 px */
+
+  /* ---- NAV ---- */
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding-block:22px;
+    position:sticky;top:env(safe-area-inset-top, 0px);z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav .links{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:var(--r-pill);padding:4px}
+  .nav .links a{
+    padding:8px 16px;border-radius:var(--r-pill);
+    font-size:14px;font-weight:400;color:var(--mute);
+    transition:background .2s ease,color .2s ease;
+  }
+  .nav .links a:hover{color:var(--fg)}
+  .nav .links a.on{background:var(--fg);color:var(--on-fg)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 22px;border-radius:var(--r-pill);
+    font-family:var(--f-body);font-size:14px;font-weight:500;
+    border:1px solid transparent;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease;
+    background:none;color:inherit;
+  }
+  .btn.solid{background:var(--fg);color:var(--on-fg)}
+  .btn.solid:hover{background:var(--orange);color:#000}
+  .btn.ghost{border-color:var(--line-strong);color:var(--fg)}
+  .btn.ghost:hover{border-color:var(--fg)}
+  .btn.pill-sm{padding:10px 18px;font-size:13px}
+  .btn .ar{font-size:16px;line-height:1}
+  .theme-btn{
+    width:38px;height:38px;border-radius:50%;
+    background:none;border:1px solid var(--line-strong);
+    display:grid;place-items:center;cursor:pointer;color:var(--mute);
+  }
+  .theme-btn:hover{color:var(--fg);border-color:var(--fg)}
+
+  /* ---- Tag / cabeçalho de seção (estilo do manual) ---- */
+  .tag{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:7px 16px;border:1px solid var(--line-strong);border-radius:var(--r-pill);
+    font-size:12.5px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);
+  }
+  .tag i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
+  .bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:18px;border-bottom:1px solid var(--line);
+    color:var(--fg);
+  }
+  .num{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);
+    display:grid;place-items:center;font-size:13px;font-weight:400;color:var(--fg);
+  }
+
+  /* ---- Hero ---- */
+  .hero{position:relative;padding-block:96px 72px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:center}
+  .hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+  h1.hero-ttl{
+    font-family:var(--f-display);font-weight:500;
+    font-size:clamp(46px,7.4vw,104px);
+    line-height:1;letter-spacing:-.022em;margin:0;color:var(--fg);text-wrap:balance;
+  }
+  h1.hero-ttl em{font-style:normal;color:var(--orange)}
+  .hero-lede{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--mute);max-width:56ch;margin:0}
+  .hero-lede b{color:var(--fg);font-weight:500}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-mark{display:flex;justify-content:center;color:var(--fg)}
+  .hero-mark svg{width:min(100%,340px);height:auto;aspect-ratio:58/93.6;fill:none;stroke:currentColor;stroke-width:.3;stroke-linejoin:round}
+
+  /* ---- Stats ---- */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    margin-top:72px;border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .stat{
+    padding:26px 24px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;gap:6px;min-width:0;
+  }
+  .stat.blue{background:var(--blue);color:#000;border-color:var(--blue)}
+  .stat .big{
+    font-family:var(--f-display);font-weight:500;
+    font-size:clamp(34px,3.8vw,52px);line-height:1;letter-spacing:-.02em;
+    display:flex;align-items:baseline;gap:3px;
+  }
+  .stat .big .u{font-size:.55em;transform:translateY(-.3em);display:inline-block}
+  .stat .lb{font-size:13px;color:var(--mute);line-height:1.3}
+  .stat.blue .lb{color:#000}
+
+  /* ---- Section ---- */
+  section{position:relative;padding-block:0 96px}
+  .sec-head{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;
+    padding-block:72px 48px;
+  }
+  h2.sec-ttl{
+    font-family:var(--f-display);font-weight:500;
+    font-size:clamp(36px,5.6vw,76px);letter-spacing:-.022em;line-height:1;margin:0;
+    text-wrap:balance;color:var(--fg);max-width:16ch;
+  }
+  .sec-sub{font-size:17px;color:var(--mute);margin:14px 0 0;max-width:46ch;line-height:1.5}
+
+  /* ---- Trabalhos: grade de células com fio fino ---- */
+  .cards{
+    display:grid;grid-template-columns:repeat(6,1fr);
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .card{
+    grid-column:span 2;
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:30px 28px 28px;
+    display:flex;flex-direction:column;gap:18px;min-width:0;
+    transition:background .25s ease;
+  }
+  .card.wide{grid-column:span 3}
+  .card:hover{background:var(--panel)}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .card .cat{
+    display:inline-flex;align-items:center;padding:5px 12px;
+    border:1px solid var(--line-strong);border-radius:var(--r-pill);
+    font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);
+  }
+  .card .arr{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);
+    display:grid;place-items:center;color:var(--mute);font-size:14px;
+    transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+  }
+  .card:hover .arr{background:var(--fg);color:var(--on-fg);border-color:var(--fg);transform:rotate(-45deg)}
+  .card h3{
+    font-family:var(--f-display);font-weight:500;
+    font-size:30px;line-height:1.1;letter-spacing:-.015em;margin:0;color:var(--fg);
+  }
+  .card p{font-size:14.5px;color:var(--mute);margin:0;line-height:1.55}
+  .card .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:4px}
+  .card .mini{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 14px 12px;display:flex;flex-direction:column;gap:2px}
+  .card .mini .m-big{
+    font-family:var(--f-display);font-weight:500;font-size:26px;letter-spacing:-.015em;color:var(--fg);
+    display:flex;align-items:baseline;gap:3px;
+  }
+  .card .mini .m-big .u{font-size:.6em;transform:translateY(-.3em)}
+  .card .mini .m-lb{font-size:11.5px;color:var(--mute);line-height:1.3}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{
+    padding:8px 14px;border-radius:var(--r-pill);border:1px solid var(--line-strong);
+    font-size:13px;font-weight:400;line-height:1;color:var(--fg);
+  }
+  .chip.dash{border-style:dashed;color:var(--mute)}
+  .card .see{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:14px;font-weight:500;color:var(--fg);margin-top:auto;padding-top:8px;
+  }
+  .card .see .ar{transition:transform .25s ease}
+  .card:hover .see .ar{transform:translateX(4px)}
+
+  /* ---- Destaque: Maktub ---- */
+  .feature{border-top:1px solid var(--line);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .feature + .cards{border-top:0}
+  .feat-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;padding:32px 28px 36px}
+  .feat-copy{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+  .feat-copy .cat{display:inline-flex;align-items:center;padding:5px 12px;border:1px solid var(--line-strong);border-radius:var(--r-pill);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .feat-copy h3{font-family:var(--f-display);font-weight:500;font-size:clamp(36px,4.6vw,64px);line-height:1;letter-spacing:-.022em;margin:0;color:var(--fg)}
+  .feat-copy p{font-size:16px;color:var(--mute);margin:0;line-height:1.6;max-width:56ch}
+  .feat-side{display:flex;flex-direction:column;gap:20px;justify-content:flex-end;align-items:flex-start}
+  .feat-side .mini-stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);width:100%}
+  .feat-side .mini{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 16px 14px;display:flex;flex-direction:column;gap:2px}
+  .feat-side .m-big{font-family:var(--f-display);font-weight:500;font-size:34px;letter-spacing:-.02em;color:var(--fg);line-height:1.05}
+  .feat-side .m-lb{font-size:12px;color:var(--mute);line-height:1.3}
+  .feat-note{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute-2);margin:-8px 0 0}
+  .feat-shots{display:grid;grid-template-columns:.8fr .8fr 1fr;border-top:1px solid var(--line)}
+  .feat-shots .shot{grid-column:auto}
+  .feat-shots .shot .ph{aspect-ratio:4/5}
+  .feat-shots .shot:nth-child(3) .ph{aspect-ratio:1/1}
+  .feat-shots .cap small{display:block;margin-top:4px;font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mute)}
+  .feat-shots .shot .cap{align-items:flex-start;line-height:1.3}
+  @media (max-width:920px){
+    .feat-head{grid-template-columns:1fr;gap:28px;padding:28px 20px 30px}
+    .feat-shots{grid-template-columns:1fr}
+  }
+
+  /* ---- Filme em destaque ---- */
+  .feature.film{border-top:1px solid var(--line)}
+  .film-shots{display:grid;grid-template-columns:2fr 1fr;border-top:1px solid var(--line)}
+  .film-shots .shot{grid-column:auto}
+  .film-shots .shot.main{grid-row:span 2}
+  .film-shots .shot .ph{aspect-ratio:16/9;position:relative}
+  .film-shots .shot.main .ph{aspect-ratio:auto;flex:1;min-height:0}
+  .film-shots .shot.main .ph img{position:absolute;inset:0}
+  .film-shots .shot .cap{align-items:flex-start;line-height:1.3}
+  .film-shots .cap small{display:block;margin-top:4px;font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mute)}
+  .play{position:absolute;left:20px;bottom:20px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:var(--r-pill);background:#fff;color:#000;font-size:13px;font-weight:500}
+  .play i{width:26px;height:26px;border-radius:50%;background:var(--orange);display:inline-flex;align-items:center;justify-content:center}
+  .play i::after{content:"";border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+  @media (max-width:920px){
+    .film-shots{grid-template-columns:1fr}
+    .film-shots .shot.main{grid-row:auto}
+    .film-shots .shot.main .ph{aspect-ratio:16/9;flex:none}
+  }
+
+  /* ---- Serviços ---- */
+  .serv{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .srv{
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:34px 28px 34px;display:flex;flex-direction:column;gap:16px;min-width:0;
+  }
+  .srv .ico{
+    width:52px;height:52px;border-radius:50%;border:1px solid var(--line-strong);
+    display:grid;place-items:center;color:var(--fg);
+  }
+  .srv .ico svg{width:22px;height:22px}
+  .srv h3{font-family:var(--f-display);font-weight:500;font-size:26px;letter-spacing:-.015em;line-height:1.1;margin:8px 0 0;color:var(--fg)}
+  .srv p{font-size:14.5px;color:var(--mute);margin:0;line-height:1.55;max-width:36ch}
+
+  /* ---- Valores (pílulas inclinadas, como no manual) ---- */
+  .values{
+    display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .values-copy{padding:48px 40px 48px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:20px}
+  .values-copy p.lead{
+    font-family:var(--f-display);font-weight:400;font-size:clamp(22px,2.3vw,30px);line-height:1.2;letter-spacing:-.01em;margin:0;color:var(--fg);
+  }
+  .values-copy p.lead b{font-weight:700}
+  .values-copy p.small{font-size:14.5px;color:var(--mute);margin:0;max-width:40ch}
+  .pills{
+    display:flex;flex-direction:column;align-items:flex-start;gap:30px;
+    padding:56px 0 56px 48px;
+  }
+  .pill{
+    display:inline-block;
+    font-family:var(--f-display);font-weight:500;
+    font-size:clamp(26px,3.6vw,50px);letter-spacing:-.02em;line-height:1;
+    padding:.2em .55em .26em;border:1px solid var(--line-strong);border-radius:var(--r-pill);
+    color:var(--fg);white-space:nowrap;transform-origin:left center;
+  }
+  .pill.dash{border-style:dashed;border-color:var(--fg)}
+  .pill:nth-child(1){transform:rotate(-3deg) translateX(8px)}
+  .pill:nth-child(2){transform:rotate(3deg) translateX(40px)}
+  .pill:nth-child(3){transform:rotate(0deg) translateX(0)}
+  .pill:nth-child(4){transform:rotate(3deg) translateX(6px)}
+  .pill:nth-child(5){transform:rotate(-3deg) translateX(10px)}
+  .pill:nth-child(6){transform:rotate(3deg) translateX(46px)}
+  .pill:nth-child(7){transform:rotate(-4deg) translateX(56px)}
+
+  /* ---- Direção criativa ---- */
+  .dir-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .dstep{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 24px 28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+  .dstep .n{font-size:13px;color:var(--mute-2);letter-spacing:.04em}
+  .dstep h3{font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.1;letter-spacing:-.015em;margin:0;color:var(--fg)}
+  .dstep p{font-size:14.5px;color:var(--mute);margin:0;line-height:1.55}
+  .mosaic{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:56px}
+  .shot{grid-column:span 2;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;min-width:0;color:var(--fg)}
+  .shot.w{grid-column:span 3}
+  .shot .ph{aspect-ratio:808/632;overflow:hidden;background:var(--panel)}
+  .shot.w .ph{aspect-ratio:3/2}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+  .shot:hover img{transform:scale(1.03)}
+  .shot .cap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border-top:1px solid var(--line)}
+  .shot:hover .cap span:last-child{color:var(--orange)}
+  .shot.more{justify-content:space-between;padding:28px;background:transparent;transition:background .25s ease}
+  .shot.more:hover{background:var(--panel)}
+  .shot.more h3{font-family:var(--f-display);font-weight:500;font-size:clamp(26px,2.6vw,38px);line-height:1.05;letter-spacing:-.02em;margin:0}
+  .shot.more .btn{align-self:flex-start;margin-top:24px}
+  .credit{margin:20px 0 0;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute-2)}
+  @media (max-width:920px){
+    .dir-steps{grid-template-columns:1fr 1fr}
+    .mosaic{grid-template-columns:1fr 1fr;margin-top:40px}
+    .shot,.shot.w{grid-column:span 1}
+    .shot.w,.shot.more{grid-column:span 2}
+    .shot .cap{font-size:11px;padding:12px}
+  }
+
+  /* ---- CTA ---- */
+  .cta{
+    border:1px solid var(--line);
+    padding:80px 48px 76px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:24px;
+  }
+  .cta h2{
+    font-family:var(--f-display);font-weight:500;
+    font-size:clamp(34px,5vw,64px);letter-spacing:-.022em;line-height:1;margin:0;text-wrap:balance;max-width:16ch;color:var(--fg);
+  }
+  .cta h2 em{font-style:normal;color:var(--orange)}
+  .cta p{color:var(--mute);font-size:16px;max-width:46ch;margin:0;line-height:1.55}
+
+  /* ---- Footer ---- */
+  footer{
+    padding-block:64px 0;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:48px;align-items:start;
+  }
+  footer .f-left{display:flex;flex-direction:column;gap:24px;max-width:44ch}
+  footer .f-left p{color:var(--mute);font-size:14.5px;line-height:1.55;margin:0}
+  footer h4{font-family:var(--f-body);font-weight:400;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 16px;color:var(--mute-2)}
+  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  footer ul a{color:var(--fg);font-size:14.5px;transition:color .2s ease}
+  footer ul a:hover{color:var(--orange)}
+  footer .socials{display:flex;gap:10px;align-items:center}
+  footer .socials a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--line-strong);
+    display:grid;place-items:center;color:var(--mute);transition:all .2s ease;
+  }
+  footer .socials a:hover{color:var(--fg);border-color:var(--fg)}
+  footer .socials svg{width:16px;height:16px}
+  .colofon{
+    grid-column:1 / -1;margin-top:16px;padding-block:24px 36px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute-2);
+  }
+  .colofon .heart{color:var(--orange);font-style:normal}
+  .theme-foot{display:none}
+
+  /* ---- Mobile ---- */
+  @media (max-width:920px){
+    .nav{padding-block:16px}
+    .nav .links{display:none}
+    .nav-right .btn{display:none}
+    .hero{padding-block:56px 40px}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-mark{justify-content:flex-start}
+    .hero-mark svg{width:120px}
+    .stats{grid-template-columns:1fr 1fr;margin-top:48px}
+    section{padding-block:0 56px}
+    .sec-head{grid-template-columns:1fr;gap:20px;padding-block:48px 32px}
+    .sec-head .num{display:none}
+    .cards{grid-template-columns:1fr}
+    .cards .card,.cards .card.wide{grid-column:auto}
+    .serv{grid-template-columns:1fr}
+    .values{grid-template-columns:1fr}
+    .values-copy{padding:36px 0 8px;border-right:0}
+    .pills{padding:24px 0 40px}
+    .pill{font-size:clamp(24px,8vw,40px)}
+    .pill:nth-child(n){transform-origin:left center}
+    .pill:nth-child(2){transform:rotate(3deg) translateX(20px)}
+    .pill:nth-child(6){transform:rotate(3deg) translateX(24px)}
+    .pill:nth-child(7){transform:rotate(-4deg) translateX(28px)}
+    .cta{padding:56px 24px 52px}
+    footer{grid-template-columns:1fr;gap:36px}
+    .colofon{flex-direction:column;align-items:flex-start}
+  }
+  @media (max-width:420px){
+    .nav-right .theme-btn{display:none}
+    .theme-foot{display:grid}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<!-- Logo oficial (vetor extraído do manual de identidade visual; não alterar) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="lg-icon"><path d="M 697.378906 345.457031 L 695.324219 344.410156 C 694.460938 343.972656 694.089844 342.9375 694.460938 342.039062 C 700.488281 327.480469 696.339844 311.5625 684.464844 305.507812 C 672.589844 299.453125 657.273438 305.4375 649.027344 318.863281 C 648.515625 319.695312 647.460938 320.007812 646.59375 319.5625 L 644.585938 318.539062 C 644.074219 318.277344 643.433594 318.386719 643.082031 318.835938 C 642.605469 319.445312 642.820312 320.292969 643.46875 320.625 L 696.261719 347.546875 C 696.773438 347.804688 697.414062 347.699219 697.765625 347.246094 C 698.238281 346.640625 698.027344 345.789062 697.378906 345.457031 "/><path d="M 696.261719 254.453125 L 643.46875 281.375 C 642.820312 281.707031 642.605469 282.554688 643.082031 283.164062 C 643.429688 283.613281 644.074219 283.722656 644.585938 283.460938 L 646.59375 282.4375 C 647.460938 281.996094 648.515625 282.304688 649.027344 283.136719 C 657.273438 296.5625 672.589844 302.546875 684.460938 296.492188 C 696.339844 290.4375 700.488281 274.519531 694.460938 259.957031 C 694.089844 259.0625 694.460938 258.027344 695.328125 257.589844 L 697.378906 256.542969 C 698.027344 256.210938 698.238281 255.359375 697.765625 254.753906 C 697.414062 254.300781 696.773438 254.195312 696.261719 254.453125 "/></g>
+    <g id="lg-word"><path d="M 732.828125 290.511719 C 732.828125 288.382812 734.808594 286.253906 738.863281 286.253906 C 743.296875 286.253906 745.9375 288.464844 746.40625 291.25 L 757.8125 289.203125 C 756.304688 282.074219 749.894531 277.570312 738.769531 277.570312 C 726.886719 277.570312 720.949219 282.320312 720.949219 290.675781 C 720.949219 308.046875 748.101562 301.246094 748.101562 310.667969 C 748.101562 313.371094 745.558594 315.746094 740.277344 315.746094 C 734.433594 315.746094 731.226562 313.207031 730.753906 309.4375 L 719.25 311.484375 C 720.195312 319.515625 727.832031 324.429688 740.558594 324.429688 C 753.101562 324.429688 759.984375 319.433594 759.984375 310.667969 C 759.984375 293.136719 732.828125 298.953125 732.828125 290.511719 "/><path d="M 768.007812 323.121094 L 780.261719 323.121094 L 780.261719 257.578125 L 768.007812 257.578125 Z M 768.007812 323.121094 "/><path d="M 814.019531 277.570312 C 797.992188 277.570312 789.222656 285.84375 789.222656 301 C 789.222656 316.15625 797.992188 324.429688 814.019531 324.429688 C 829.957031 324.429688 838.628906 316.15625 838.628906 301 C 838.628906 285.84375 829.957031 277.570312 814.019531 277.570312 M 814.019531 315.089844 C 804.96875 315.089844 801.105469 310.914062 801.292969 301 C 801.480469 291.085938 805.441406 286.910156 814.019531 286.910156 C 822.882812 286.910156 826.75 291.085938 826.558594 301 C 826.371094 310.914062 822.507812 315.089844 814.019531 315.089844 "/><path d="M 894.738281 307.882812 L 885.308594 278.878906 L 872.488281 278.878906 L 863.058594 307.882812 L 854.003906 278.878906 L 840.996094 278.878906 L 857.023438 323.121094 L 869.09375 323.121094 L 878.898438 294.035156 L 888.707031 323.121094 L 900.773438 323.121094 L 916.804688 278.878906 L 903.792969 278.878906 Z M 894.738281 307.882812 "/><path d="M 960.566406 317.46875 C 951.230469 317.46875 946.703125 312.304688 946.894531 301 C 946.988281 289.859375 951.515625 284.53125 960.660156 284.53125 C 967.636719 284.53125 971.503906 287.648438 973.109375 293.871094 L 981.589844 292.316406 C 978.859375 282.730469 971.789062 277.570312 960.566406 277.570312 C 946.234375 277.570312 938.03125 285.84375 938.03125 301 C 938.03125 316.15625 946.234375 324.429688 960.566406 324.429688 C 971.972656 324.429688 979.046875 319.1875 981.6875 309.273438 L 973.109375 307.71875 C 971.410156 314.273438 967.542969 317.46875 960.566406 317.46875 "/><path d="M 1009.792969 277.570312 C 994.894531 277.570312 986.691406 285.84375 986.691406 301 C 986.691406 316.15625 994.894531 324.429688 1009.792969 324.429688 C 1024.6875 324.429688 1032.703125 316.15625 1032.703125 301 C 1032.703125 285.84375 1024.6875 277.570312 1009.792969 277.570312 M 1009.792969 317.546875 C 999.890625 317.546875 995.273438 312.140625 995.460938 301 C 995.648438 289.859375 1000.269531 284.453125 1009.792969 284.453125 C 1019.597656 284.453125 1024.125 289.859375 1023.933594 301 C 1023.746094 312.140625 1019.21875 317.546875 1009.792969 317.546875 "/><path d="M 1066.75 277.570312 C 1059.207031 277.570312 1053.550781 280.027344 1050.15625 284.777344 L 1049.402344 278.878906 L 1041.667969 278.878906 L 1041.667969 323.121094 L 1050.53125 323.121094 L 1050.53125 297.804688 C 1050.53125 288.957031 1056.191406 284.859375 1065.238281 284.859375 C 1073.347656 284.859375 1075.988281 288.300781 1075.988281 295.59375 L 1075.988281 323.121094 L 1084.855469 323.121094 L 1084.855469 295.59375 C 1084.855469 283.960938 1078.539062 277.570312 1066.75 277.570312 "/><path d="M 1108.339844 271.917969 L 1108.339844 266.34375 L 1099.570312 266.34375 L 1099.570312 271.917969 C 1099.570312 276.667969 1096.460938 278.878906 1091.933594 278.878906 L 1091.933594 285.84375 L 1099.289062 285.84375 L 1099.289062 306.652344 C 1099.289062 317.222656 1107.019531 323.035156 1120.410156 323.035156 L 1120.410156 315.992188 C 1112.207031 315.992188 1108.152344 313.042969 1108.152344 306.652344 L 1108.152344 285.84375 L 1120.410156 285.84375 L 1120.410156 278.878906 L 1103.8125 278.878906 C 1106.832031 277.324219 1108.339844 274.949219 1108.339844 271.917969 "/><path d="M 1147.003906 277.570312 C 1133.144531 277.570312 1125.128906 285.84375 1125.128906 301 C 1125.128906 316.15625 1133.050781 324.429688 1147.195312 324.429688 C 1158.226562 324.429688 1165.390625 319.351562 1167.9375 310.175781 L 1159.828125 308.699219 C 1157.941406 314.84375 1154.074219 317.710938 1147.382812 317.710938 C 1138.421875 317.710938 1133.992188 312.796875 1133.804688 302.230469 L 1168.976562 302.230469 C 1168.976562 286.417969 1161.523438 277.570312 1147.003906 277.570312 M 1134.085938 296.164062 C 1135.5 287.972656 1139.742188 284.285156 1147.195312 284.285156 C 1154.546875 284.285156 1158.601562 287.972656 1159.921875 296.164062 Z M 1134.085938 296.164062 "/><path d="M 1203.019531 277.570312 C 1195.476562 277.570312 1189.816406 280.027344 1186.421875 284.777344 L 1185.667969 278.878906 L 1177.9375 278.878906 L 1177.9375 323.121094 L 1186.800781 323.121094 L 1186.800781 297.804688 C 1186.800781 288.957031 1192.457031 284.859375 1201.511719 284.859375 C 1209.617188 284.859375 1212.257812 288.300781 1212.257812 295.59375 L 1212.257812 323.121094 L 1221.121094 323.121094 L 1221.121094 295.59375 C 1221.121094 283.960938 1214.804688 277.570312 1203.019531 277.570312 "/><path d="M 1244.605469 271.917969 L 1244.605469 266.34375 L 1235.835938 266.34375 L 1235.835938 271.917969 C 1235.835938 276.667969 1232.726562 278.878906 1228.199219 278.878906 L 1228.199219 285.84375 L 1235.554688 285.84375 L 1235.554688 306.652344 C 1235.554688 317.222656 1243.289062 323.035156 1256.675781 323.035156 L 1256.675781 315.992188 C 1248.472656 315.992188 1244.417969 313.042969 1244.417969 306.652344 L 1244.417969 285.84375 L 1256.675781 285.84375 L 1256.675781 278.878906 L 1240.082031 278.878906 C 1243.097656 277.324219 1244.605469 274.949219 1244.605469 271.917969 "/></g>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#top" aria-label="Slow Content, voltar ao início">
+      <svg class="logo full" viewBox="642.61 254.20 614.07 93.61" role="img" aria-label="Slow Content"><use href="#lg-icon"/><use href="#lg-word"/></svg>
+    </a>
+
+    <div class="links" role="navigation">
+      <a href="#top" class="on">Início</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#servicos">Sobre</a>
+      <a href="#direcao">Direção</a>
+      <a href="#valores">Valores</a>
+      <a href="#contato">Contato</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Alternar entre fundo escuro e claro">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c-2 0-9 0-9-9z"/></svg>
+      </button>
+      <a href="#contato" class="btn solid">Vamos conversar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="tag"><i aria-hidden="true"></i> Agência digital de conteúdo</span>
+        <h1 class="hero-ttl">Conteúdo que respeita o <em>tempo</em>.</h1>
+        <p class="hero-lede">
+          Criamos estratégias de comunicação nas redes sociais para conectar marcas e pessoas de forma pertinente, relevante, crítica e atemporal. <b>Na contramão da pressa e da superficialidade.</b>
+        </p>
+        <div class="hero-ctas">
+          <a href="#trabalhos" class="btn solid">Ver trabalhos <span class="ar">→</span></a>
+          <a href="#contato" class="btn ghost">Falar com a gente</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <!-- Conceito visual: ampulheta em contorno (uso permitido pelo manual apenas em conceitos visuais) -->
+        <svg viewBox="642.61 254.20 57.88 93.61"><use href="#lg-icon"/></svg>
+      </div>
+    </div>
+
+    <div class="stats" aria-label="Resultados em números">
+      <div class="stat">
+        <div class="big">+140<span class="u">%</span></div>
+        <div class="lb">Engajamento médio</div>
+      </div>
+      <div class="stat">
+        <div class="big">3<span class="u">×</span></div>
+        <div class="lb">Alcance orgânico</div>
+      </div>
+      <div class="stat">
+        <div class="big">−50<span class="u">%</span></div>
+        <div class="lb">Volume, mais impacto</div>
+      </div>
+      <div class="stat blue">
+        <div class="big">7</div>
+        <div class="lb">Valores que nos guiam</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRABALHOS -->
+  <section id="trabalhos">
+    <div class="bar"><span class="lbl">Trabalhos</span><span class="num">1</span></div>
+    <div class="sec-head">
+      <div>
+        <h2 class="sec-ttl">Projetos em destaque</h2>
+        <p class="sec-sub">Processos reais, resultados construídos com tempo.</p>
+      </div>
+      <a href="#" class="btn ghost">Ver todos <span class="ar">→</span></a>
+    </div>
+
+    <article class="feature film">
+      <div class="feat-head">
+        <div class="feat-copy">
+          <span class="cat">Em destaque · Filme</span>
+          <h3>Yoga na Quebrada</h3>
+          <p>Mini documentário sobre a prática de yoga no meio da comunidade, contada pela perspectiva e pela vivência de um jovem preto. Da ideia ao corte final, um filme feito para desacelerar o olhar sobre a periferia.</p>
+          <div class="chips">
+            <span class="chip">Direção</span>
+            <span class="chip">Concepção criativa</span>
+            <span class="chip">Edição</span>
+            <span class="chip dash">Mini documentário</span>
+          </div>
+        </div>
+        <div class="feat-side">
+          <div class="mini-stats">
+            <div class="mini"><div class="m-big">2026</div><div class="m-lb">estreia em 4 de janeiro</div></div>
+            <div class="mini"><div class="m-big">Doc</div><div class="m-lb">mini documentário, com Gustavo Soares</div></div>
+          </div>
+          <p class="feat-note">Fotografia e color: Victor Vakirtzis</p>
+          <a href="https://www.youtube.com/watch?v=QqPItkHxzLA" target="_blank" rel="noopener" class="btn solid">Assistir no YouTube <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="film-shots">
+        <a class="shot main" href="https://www.youtube.com/watch?v=QqPItkHxzLA" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/yoga-por-do-sol.jpg" alt="Cena do filme Yoga na Quebrada: praticante em postura de yoga numa rua em mirante, com a comunidade e o céu ao entardecer ao fundo" loading="lazy"><span class="play"><i></i>Assistir ao filme</span></div>
+          <div class="cap"><span>Filme · Yoga na Quebrada<small>Direção, concepção criativa e edição</small></span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.youtube.com/watch?v=QqPItkHxzLA" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/yoga-retrato.jpg" alt="Cena em preto e branco do filme: retrato do protagonista de óculos numa viela da comunidade" loading="lazy"></div>
+          <div class="cap"><span>Cena · Retrato</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.youtube.com/watch?v=QqPItkHxzLA" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/yoga-parque.jpg" alt="Cena do filme: protagonista meditando sentado sobre um tapete de yoga num parque arborizado" loading="lazy"></div>
+          <div class="cap"><span>Cena · Meditação</span><span aria-hidden="true">↗</span></div>
+        </a>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feat-head">
+        <div class="feat-copy">
+          <span class="cat">Em destaque · Conteúdo B2B</span>
+          <h3>Maktub Seguros</h3>
+          <p>Direção de conteúdo e criação de artes para a página da Maktub no LinkedIn: uma corretora que cuida de benefícios corporativos falando com RH e gestores de forma clara, humana e com argumento.</p>
+          <div class="chips">
+            <span class="chip">LinkedIn</span>
+            <span class="chip">Conteúdo para RH</span>
+            <span class="chip">Posts educativos</span>
+            <span class="chip dash">Divulgação de eventos</span>
+          </div>
+        </div>
+        <div class="feat-side">
+          <div class="mini-stats">
+            <div class="mini"><div class="m-big">+2.000</div><div class="m-lb">empresas clientes</div></div>
+            <div class="mini"><div class="m-big">+70.000</div><div class="m-lb">vidas administradas</div></div>
+          </div>
+          <p class="feat-note">Números institucionais da Maktub</p>
+          <a href="https://www.linkedin.com/company/35636795/" target="_blank" rel="noopener" class="btn solid">Ver página no LinkedIn <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="feat-shots">
+        <a class="shot" href="https://www.linkedin.com/company/35636795/" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/maktub-custo-oculto.jpg" alt="Capa do carrossel O custo invisível da má gestão: Sua empresa sabe quanto gasta com benefícios. Sabe quanto perde quando eles são mal administrados?" loading="lazy"></div>
+          <div class="cap"><span>01 · Carrossel · O custo invisível da má gestão<small>Mais engajado · 8 reações · 5 compartilhamentos</small></span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.linkedin.com/company/35636795/" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/maktub-beneficio-decisao.jpg" alt="Arte Benefício não é despesa. É decisão., fundo azul-marinho com a marca Maktub" loading="lazy"></div>
+          <div class="cap"><span>02 · Benefício não é despesa. É decisão.<small>16 reações · 2 comentários · 8 compartilhamentos</small></span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.linkedin.com/company/35636795/" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/maktub-ombro-amigo.jpg" alt="Arte do evento Ombro Amigo: fundo azul-marinho, título em branco e azul, data 24.10, horário e local" loading="lazy"></div>
+          <div class="cap"><span>03 · Evento · Ombro Amigo<small>8 reações · 1 comentário · 6 compartilhamentos</small></span><span aria-hidden="true">↗</span></div>
+        </a>
+      </div>
+    </article>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="top">
+          <span class="cat">Estratégia de conteúdo</span>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <h3>Reposicionamento de Marca</h3>
+        <p>Reconstrução do discurso de uma marca de moda autoral nas redes sociais, trocando volume por profundidade e consistência.</p>
+        <div class="mini-stats">
+          <div class="mini"><div class="m-big">+140<span class="u">%</span></div><div class="m-lb">Engajamento por post</div></div>
+          <div class="mini"><div class="m-big">−50<span class="u">%</span></div><div class="m-lb">Volume de publicações</div></div>
+        </div>
+        <a href="#" class="see">Ver projeto <span class="ar">→</span></a>
+      </article>
+
+      <article class="card">
+        <div class="top">
+          <span class="cat">Redes sociais</span>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <h3>Narrativa Social</h3>
+        <p>Sistema de conteúdo em vídeo para uma marca de cultura urbana, unindo storytelling documental e ritmo sustentável de produção.</p>
+        <div class="mini-stats">
+          <div class="mini"><div class="m-big">3<span class="u">×</span></div><div class="m-lb">Alcance orgânico</div></div>
+          <div class="mini"><div class="m-big">+68<span class="u">%</span></div><div class="m-lb">Retenção de vídeo</div></div>
+        </div>
+        <a href="#" class="see">Ver projeto <span class="ar">→</span></a>
+      </article>
+
+      <article class="card">
+        <div class="top">
+          <span class="cat">Comunicação crítica</span>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <h3>Conteúdo com Propósito</h3>
+        <p>Linha editorial crítica e empática para uma organização de impacto social, transformando pautas complexas em conteúdo acessível.</p>
+        <div class="mini-stats">
+          <div class="mini"><div class="m-big">4<span class="u">×</span></div><div class="m-lb">Compartilhamentos</div></div>
+          <div class="mini"><div class="m-big">+90<span class="u">%</span></div><div class="m-lb">Salvamentos</div></div>
+        </div>
+        <a href="#" class="see">Ver projeto <span class="ar">→</span></a>
+      </article>
+
+      <article class="card wide">
+        <div class="top">
+          <span class="cat">Growth · Meta</span>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <h3>Growth na Meta</h3>
+        <p>Estratégia integrada de crescimento em Instagram, Facebook e WhatsApp: conteúdo orgânico que constrói audiência, mídia paga que escala o que funciona e conversas que transformam atenção em relacionamento duradouro.</p>
+        <div class="chips">
+          <span class="chip">Instagram</span>
+          <span class="chip">Facebook</span>
+          <span class="chip">WhatsApp</span>
+          <span class="chip dash">Funil completo</span>
+          <span class="chip dash">Mídia paga + orgânico</span>
+        </div>
+        <a href="#" class="see">Ver projeto <span class="ar">→</span></a>
+      </article>
+
+      <article class="card wide">
+        <div class="top">
+          <span class="cat">Growth · B2B</span>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <h3>LinkedIn Ads</h3>
+        <p>Campanhas B2B com segmentação por cargo, setor e porte de empresa, conteúdo de autoridade e formulários de geração de leads pensados para ciclos de decisão longos, sem pressa e com intenção.</p>
+        <div class="chips">
+          <span class="chip">Sponsored Content</span>
+          <span class="chip">Lead Gen Forms</span>
+          <span class="chip">Segmentação por conta</span>
+          <span class="chip dash">Geração de demanda</span>
+        </div>
+        <a href="#" class="see">Ver projeto <span class="ar">→</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="bar"><span class="lbl">Serviços</span><span class="num">2</span></div>
+    <div class="sec-head">
+      <div>
+        <h2 class="sec-ttl">Conteúdo com profundidade e intenção</h2>
+        <p class="sec-sub">Temos um olhar que vai além do imediatismo e foca no fortalecimento das relações entre pessoas e marcas.</p>
+      </div>
+    </div>
+
+    <div class="serv">
+      <div class="srv">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.5 5.5-5.5 2.5 2.5-5.5z"/></svg>
+        </div>
+        <h3>Estratégia de Conteúdo</h3>
+        <p>Território de marca, tom de voz e pilares editoriais para uma comunicação com propósito e direção.</p>
+      </div>
+
+      <div class="srv">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+        </div>
+        <h3>Redes Sociais</h3>
+        <p>Produção e curadoria de conteúdo autoral, com ritmo sustentável e formatos que envelhecem bem.</p>
+      </div>
+
+      <div class="srv">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10M7 3v4c0 2 2 3 5 5s5 3 5 5v4M17 3v4c0 2-2 3-5 5s-5 3-5 5v4"/></svg>
+        </div>
+        <h3>Narrativa &amp; Direção Criativa</h3>
+        <p>Histórias construídas com tempo, pesquisa e intenção, da ideia à direção de imagem e vídeo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIREÇÃO CRIATIVA -->
+  <section id="direcao">
+    <div class="bar"><span class="lbl">Direção criativa</span><span class="num">3</span></div>
+    <div class="sec-head">
+      <div>
+        <h2 class="sec-ttl">Imagens que levam o tempo que precisam</h2>
+        <p class="sec-sub">Do conceito à imagem final, conduzimos cada projeto com intenção, referência e olhar próprio.</p>
+      </div>
+      <a href="https://www.behance.net/ericmiroma" target="_blank" rel="noopener" class="btn ghost">Ver no Behance <span class="ar">↗</span></a>
+    </div>
+
+    <div class="dir-steps">
+      <div class="dstep"><span class="n">01</span><h3>Conceito</h3><p>Pesquisa, referências e território visual alinhados à marca.</p></div>
+      <div class="dstep"><span class="n">02</span><h3>Casting e locação</h3><p>Pessoas e lugares que contam a história com verdade.</p></div>
+      <div class="dstep"><span class="n">03</span><h3>Foto e vídeo</h3><p>Direção de set, luz e enquadramento com intenção.</p></div>
+      <div class="dstep"><span class="n">04</span><h3>Edição e tratamento</h3><p>Seleção, cor e acabamento para um conjunto coeso.</p></div>
+    </div>
+
+    <div class="mosaic">
+        <a class="shot" href="https://www.behance.net/gallery/159141985/THE-PINK-DREAM" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/the-pink-dream.jpg" alt="Duas pessoas sob um guarda-chuva preto em uma rua chuvosa de São Paulo" loading="lazy"></div>
+          <div class="cap"><span>The Pink Dream</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.behance.net/gallery/153310051/THE-REBEL" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/the-rebel.jpg" alt="Dançarino em parada de mãos em uma passagem de metrô, em preto e branco" loading="lazy"></div>
+          <div class="cap"><span>The Rebel</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.behance.net/gallery/153144711/THE-ARTISTS-RITUAL" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/the-artists-ritual.jpg" alt="Homem de óculos escuros e boné branco encostado em um carro vermelho, ao lado de um altar com camisa de futebol" loading="lazy"></div>
+          <div class="cap"><span>The Artist’s Ritual</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot w" href="https://www.behance.net/gallery/153489691/NORTH-SIDE-OF-SAO-PAULO" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/north-side.jpg" alt="Ciclista em movimento diante de um muro grafitado, em preto e branco" loading="lazy"></div>
+          <div class="cap"><span>North Side of São Paulo</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot w" href="https://www.behance.net/gallery/227399067/Doing-with-the-hands" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/doing-with-the-hands.jpg" alt="Dois lutadores em treino, um deles de costas com o braço tatuado, em preto e branco" loading="lazy"></div>
+          <div class="cap"><span>Doing with the hands</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.behance.net/gallery/245215021/atletas-lookbook" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/atletas-lookbook.jpg" alt="Pernas de calça cargo preta e tênis laranja sobre um tapete vermelho" loading="lazy"></div>
+          <div class="cap"><span>Atletas lookbook</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="shot" href="https://www.behance.net/gallery/153373453/SAO-PAULO-STREETS" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/sao-paulo-streets.jpg" alt="Barbeiro de navalha em punho fazendo a barba de um cliente na rua" loading="lazy"></div>
+          <div class="cap"><span>São Paulo Streets</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <div class="shot more">
+          <h3>Mais projetos fotográficos</h3>
+          <a href="https://www.behance.net/ericmiroma" target="_blank" rel="noopener" class="btn solid">Abrir Behance <span class="ar">↗</span></a>
+        </div>
+    </div>
+    <p class="credit">Imagens: Eric Amorim</p>
+  </section>
+
+  <!-- VALORES -->
+  <section id="valores">
+    <div class="bar"><span class="lbl">Valores</span><span class="num">4</span></div>
+    <div class="values">
+      <div class="values-copy">
+        <p class="lead">A <b>Slow Content</b> se guia por princípios que vão além da estética ou da tendência.</p>
+        <p class="small">Nossos valores moldam a forma como criamos, nos relacionamos e entregamos conteúdo com profundidade e intenção.</p>
+      </div>
+      <div class="pills" aria-label="Valores da Slow Content">
+        <span class="pill">Relevância</span>
+        <span class="pill">Propósito</span>
+        <span class="pill dash">Autenticidade</span>
+        <span class="pill">Originalidade</span>
+        <span class="pill">Atemporalidade</span>
+        <span class="pill">Crítica</span>
+        <span class="pill">Empática</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contato">
+    <div class="bar"><span class="lbl">Contato</span><span class="num">5</span></div>
+    <div style="padding-top:48px">
+      <div class="cta">
+        <span class="tag"><i aria-hidden="true"></i> Vamos criar juntos</span>
+        <h2>Pronto para contar sua história com <em>tempo</em> e intenção?</h2>
+        <p>Boas histórias precisam de tempo, estratégia e intenção para gerar impacto real. Vamos conversar sobre a sua.</p>
+        <a href="mailto:slowcontentagency@gmail.com?subject=Vamos%20conversar%20%E2%80%94%20contato%20pelo%20site&body=Ol%C3%A1%2C%20Slow%20Content!%0A%0AMeu%20nome%3A%20%0AEmpresa%20ou%20marca%3A%20%0AO%20que%20eu%20gostaria%20de%20criar%20ou%20melhorar%3A%20%0A%0AObrigado!" class="btn solid" style="padding:16px 26px;font-size:15px">Começar uma conversa <span class="ar">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-left">
+      <a href="#top" aria-label="Slow Content, voltar ao início">
+        <svg class="logo full" viewBox="642.61 254.20 614.07 93.61" role="img" aria-label="Slow Content"><use href="#lg-icon"/><use href="#lg-word"/></svg>
+      </a>
+      <p>Agência digital de conteúdo. Estratégias de comunicação para redes sociais que conectam marcas e pessoas de forma pertinente, relevante, crítica e atemporal.</p>
+      <a href="#contato" class="btn solid pill-sm" style="align-self:flex-start">Iniciar um projeto <span class="ar">↗</span></a>
+    </div>
+
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#servicos">Sobre</a></li>
+        <li><a href="#direcao">Direção criativa</a></li>
+        <li><a href="#valores">Valores</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Conecte-se</h4>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 1 1 4 0v4M12 10v7"/></svg>
+        </a>
+        <a href="mailto:slowcontentagency@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+        </a>
+        <button class="theme-btn theme-foot" type="button" data-theme-toggle aria-label="Alternar entre fundo escuro e claro">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c-2 0-9 0-9-9z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="colofon">
+      <span>© 2026 Slow Content. Todos os direitos reservados.</span>
+      <span>Feito com <em class="heart">♥</em> e tempo, sem pressa.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Tema: escuro (negativo) é o padrão da marca; claro (positivo) por escolha do visitante
+  (function(){
+    const KEY='sc-theme', root=document.documentElement;
+    let s=null; try{s=localStorage.getItem(KEY)}catch(e){}
+    root.setAttribute('data-theme', s==='light' ? 'light' : 'dark');
+    document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const n = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', n);
+        try{localStorage.setItem(KEY,n)}catch(e){}
+      });
+    });
+  })();
+
+  // Estado ativo da navegação
+  (function(){
+    const links=document.querySelectorAll('.nav .links a');
+    const map={}; links.forEach(a=>{const id=a.getAttribute('href')?.slice(1); if(id) map[id]=a});
+    const ids=Object.keys(map);
+    function setOn(id){links.forEach(a=>a.classList.remove('on'));map[id]?.classList.add('on')}
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{if(e.isIntersecting) setOn(e.target.id)});
+    },{rootMargin:'-40% 0px -55% 0px'});
+    ids.forEach(id=>{const el=document.getElementById(id); if(el) io.observe(el)});
+  })();
+</script>
+
+</body></html>
